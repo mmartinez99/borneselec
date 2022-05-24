@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<div class="row">
+
+
+    <% @bornes.each do |borne| %>
+    <div class="  col-sm-4 col-md-3 ">
+     <div class="card-body text-center">
+          <h4 class="card-title"><%= borne.Adresse %></h4>
+          <p class="card-text"><%= borne.Ville %>   euros </p>
+          <p class="card-text"><%= borne.CodePostal %>   euros </p>
+          <p class="card-text"><%= borne.Latitude %>   euros </p>
+          <p class="card-text"><%= borne.Longitude %>   euros </p>
+          <p class="card-text"><%= borne.Tarif %>   euros </p>
+
+
+          <%= link_to 'Show', borne , :class => "btn btn-primary" %>
+          <%= link_to 'Edit', edit_borne_path(borne) , :class => "btn btn-primary" %>
+          <%= link_to 'Destroy', borne, method: :delete, data: {confirm: 'Are you sure?'} , :class => "btn btn-primary" %>
+
+        </div>
+
+      </div>
+      <br>
+      </div>
+
+    <% end %>
+
+
+</div>
+<br>
+
+<%= link_to 'New borne', new_borne_path %>

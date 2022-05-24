@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<p><h1> ingedients</h1>
+<%=@result_array  %>
+
+
+<h1> ingedients</h1>
+<%=@records_array  %> <br>
+
+<% @records_array.each   do |val| %>
+ <% val.each do |k,v| %>
+    <%=  "#{k} #{v}" %> <br>
+         <% end %>
+<% end %>
+<br>
+  <strong>Designpizz:</strong>
+  <%= @borne.Adresse %>
+
+</p>
+
+<p>
+  <strong>Tarifpizz:</strong>
+  <%= @borne.Ville %>
+</p>
+
+<!--<p>-->
+<!--  <strong>Picture:</strong>-->
+  <%#= @borne.picture %>
+<!--</p>-->
+
+<%= link_to 'Edit', edit_borne_path(@borne) %> |
+<%= link_to 'Back', bornes_path %>
+
+
+
+<div class="row">
+
+
+
+    <div class="col-lg-4 col-md-4 ">
+      <div class="card  ">
+        <%= image_tag ("/assets/#{@borne.id}.jpg"), class: " img1 img-responsive card-img-top "%>
+        <div class="card-body text-center">
+          <h4 class="card-title"><%= @borne.Adresse %></h4>
+          <p class="card-text"><%= @borne.Ville %>   euros </p>
+
+          <%= link_to 'Edit', edit_borne_path(@borne) ,:class => "btn btn-primary" %>
+          <%= link_to 'bornes list', bornes_path ,:class => "btn btn-primary" %>
+        </div>
+
+      </div>
+      <br>
+    </div>
+  <div class="col-lg-4 col-md-4 ">
+    <div class="card  ">
+
+      <div class="card-body text-center">
+        <h4 class="card-title"><%= @borne.Adresse %></h4>
+        <p class="card-text"><%= @borne.Ville %>   euros </p>
+        <%= link_to 'bornes list', bornes_path ,:class => "btn btn-primary" %>
+      </div>
+
+    </div>
+    <br>
+  </div>
+
+  <div class="col-lg-4 col-md-4 ">
+    <div class="card  ">
+
+
+      <div class="card-body text-center">
+        <h4 class="card-title"><%= @borne.Adresse %></h4>
+        <p class="card-text"><%= @borne.Ville %>   euros </p>
+        <%= link_to 'bornes list', bornes_path ,:class => "btn btn-primary" %>
+      </div>
+
+    </div>
+    <br>
+  </div>
+
+
+
+</div>

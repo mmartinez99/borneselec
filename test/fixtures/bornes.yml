@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ID: 1
+  Adresse: MyString
+  Ville: MyString
+  CodePostal: 1
+  Latitude: 1.5
+  Longitude: 1.5
+  Tarif: 1.5
+
+two:
+  ID: 1
+  Adresse: MyString
+  Ville: MyString
+  CodePostal: 1
+  Latitude: 1.5
+  Longitude: 1.5
+  Tarif: 1.5

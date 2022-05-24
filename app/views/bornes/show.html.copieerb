@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Designpizz:</strong>
+  <%= @borne.Designpizz %>
+</p>
+
+<p>
+  <strong>Tarifpizz:</strong>
+  <%= @borne.Tarifpizz %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @borne.picture %>
+</p>
+
+<%= link_to 'Edit', edit_borne_path(@borne) %> |
+<%= link_to 'Back', bornes_path %>

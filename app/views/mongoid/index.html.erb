@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Liste des Bornes</h1>
+
+
+
+<div class="row">
+
+    <% Borneelec.each do |borneelec| %>
+    <div class="card-body text-center">
+      <h4 class="card-title"><%= borneelec.name %></td></h4>
+      <p class="card-text">  <%= borneelec.adresse %></p>
+      <p class="card-text">  <%= borneelec.ville %></p>
+      <p class="card-text">  <%= borneelec.codepostal %></p>
+      <p class="card-text">  <%= borneelec.latitude %></p>
+      <p class="card-text">  <%= borneelec.longitude %></p>
+      <p class="card-text">  <%= borneelec.tarif %></p>
+      <td><%= link_to 'Détails', mongoid_path(borneelec.id),:class => "btn btn-primary"  %></td>
+      &nbsp;
+       <td><%= link_to 'Update', edit_mongoid_path(borneelec) %></td>
+      &nbsp;
+      <td><%= button_to 'Supprimer', mongoid_path(borneelec.id), method: :delete , class: "btn btn-primary"%></td>
+    </div>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Borne' , new_mongoid_path %>

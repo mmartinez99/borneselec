@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bornes API + BDD</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" integrity="sha512-WXoSHqw/t26DszhdMhOXOkI7qCiv5QWXhH9R7CgvgZMHz1ImlkVQ3uNsiQKu5wwbbxtPzFXd1hK4tzno2VqhpA==" crossorigin=""></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    #map1 {
+        width: 1000px;
+        height: 500px;
+        position: absolute ;
+    }
+</style>
+
+</head>
+<body>
+
+
+<%= @array %>
+<%= @array2 %>
+
+<div id="map1"></div>
+<h1>Map API + BDD</h1>
+
+<script type="text/javascript">
+
+    map = L.map('map1').setView(<%= @arraycenter %>, 13)
+
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        maxZoom: 20
+    }).addTo(map)
+    var tabpoint = <%= @arraypoint %>
+    var tabinfo = <%=raw  @arrayinfo %>
+
+        console.log(tabinfo);
+    for (var i = 0; i < tabpoint.length; i++) {
+        var marker = L.marker(tabpoint[i]).addTo(map);
+        marker.bindPopup('Latitude'+tabpoint[i][0] + '<br> Longitude ' + tabpoint[i][1] + "  <br> Nom" + tabinfo[i][0] + "  <br> Adresse" + tabinfo[i][1] + "  <br> Code Postal" + tabinfo[i][2])
+    }
+    var tabpoint2 = <%= @arraypoint2 %>
+    var tabinfo2 = <%=raw  @arrayinfo2 %>
+    for (var j = 0; j < tabpoint2.length;j++) {
+        var marker2 = L.marker(tabpoint2[j]).addTo(map);
+        marker2.bindPopup('Latitude'+tabpoint2[j][0] + '<br> Longitude ' + tabpoint2[j][1] + "  <br> Nom" + tabinfo2[j][0] + "  <br> Adresse" + tabinfo2[j][1] + "  <br> Code Postal" + tabinfo2[j][2])
+    }
+
+    marker = L.marker(<%= @array %>).addTo(map)
+
+    marker2 = L.marker(<%= @array2 %>).addTo(map)
+
+
+</script>
+
+
+</body>
+</html>

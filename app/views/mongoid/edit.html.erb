@@ -1,0 +1,53 @@
+<h1>Modifier la borne <%= @bornelec.name %></h1>
+
+<%= form_for @bornelec, url: mongoid_path(@bornelec), method: :put do |f| %>
+  <% if @bornelec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bornelec.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% @bornelec.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :adresse %><br>
+    <%= f.text_field :adresse , class: 'form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :codepostal %><br>
+    <%= f.text_field :codepostal, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ville %><br>
+    <%= f.text_field :ville, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :tarif %><br>
+    <%= f.text_field :tarif, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <!--    <button type="submit" class="btn btn-prymary">fd</button>-->
+  </div>
+
+
+<%= link_to 'Back', mongoid_index_url %>
+
+<% end %>

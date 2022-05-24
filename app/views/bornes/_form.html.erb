@@ -1,0 +1,89 @@
+  <%= form_for @borne, url: borne_path(@borne), method: :put do |form| %>
+
+    <% if borne.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(borne.errors.count, "error") %> prohibited this borne from being saved:</h2>
+
+      <ul>
+      <% borne.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <p>Form begin dans form html</p>
+  <p><h1> ingedients</h1>
+  <%= @result_array %>
+
+
+  <h1> ingedients</h1>
+  <%= @records_array %> <br>
+
+  <% @records_array.each do |val| %>
+    <% val.each do |k, v| %>
+      <%= "#{v}" %>
+    <% end %>
+  <% end %>
+  <div class="field">
+    <%= form.label :Adresse %>
+    <%= form.text_field :Adresse %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Tarif %>
+    <%= form.number_field :Tarif , :step => 0.5%>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <div class="row">
+
+
+
+    <div class="col-lg-4 col-md-4 ">
+
+        <div class="card-body text-center">
+          <h4 class="card-title"><%= @borne.Adresse %></h4>
+          <p class="card-text"><%= @borne.Tarif %>   euros </p>
+          <%= link_to 'bornes list', bornes_path ,:class => "btn btn-primary" %>
+        </div>
+
+      </div>
+      <br>
+    </div>
+
+    <div class="col-lg-4 col-md-4 ">
+
+        <div class="card-body text-center">
+          <h4 class="card-title"><%= @borne.Adresse %></h4>
+          <p class="card-text"><%= @borne.Tarif %>   euros </p>
+          <%= link_to 'bornes list', bornes_path ,:class => "btn btn-primary" %>
+        </div>
+
+      </div>
+      <br>
+    </div>
+    <div class="col-lg-4 col-md-4 ">
+      <div class="card  ">
+        <ul class="list-group">
+        <% @records_array.each do |val| %>
+
+              <% val.each do |k, v| %>
+              <li class="list-group-item"><%= "#{k} :  #{v}" %></li>
+              <% end %>
+            <li class="list-group-item active"> </li>
+        <% end %>
+        </ul>
+
+        </div>
+
+      </div>
+      <br>
+    </div>
+
+  </div>
+
+<% end %>

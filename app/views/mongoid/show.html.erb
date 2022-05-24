@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name :</strong>
+  <%= @bornelec.name %>
+</p>
+<p>
+  <strong>Adresse :</strong>
+  <%= @bornelec.adresse %>
+</p>
+
+<p>
+  <strong>Code Postal:</strong>
+  <%= @bornelec.codepostal %>
+</p>
+
+<p>
+  <strong>Ville:</strong>
+  <%= @bornelec.ville %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @bornelec.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @bornelec.longitude %>
+</p>
+<p>
+  <strong>Tarif:</strong>
+  <%= @bornelec.tarif %>
+</p>
+
+<%= link_to 'Edit', edit_mongoid_path(@bornelec) %> |
+
+<%= link_to 'Revenir a la liste des bornes', 'index' %>
+

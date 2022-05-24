@@ -1,0 +1,99 @@
+  <%= form_for @borne, url: { action: "create" }, method: :post do |form| %>
+
+    <% if @borne.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(borne.errors.count, "error") %> prohibited this borne from being saved:</h2>
+
+      <ul>
+      <% borne.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <p>Form begin dans form html</p>
+
+  <div class="field">
+    <%= form.label :Adresse %>
+    <%= form.text_field :Adresse %>
+    <br/>
+    <%= form.label :Ville %>
+    <%= form.text_field :Ville %>
+    <br/>
+    <%= form.label :CodePostal %>
+    <%= form.text_field :CodePostal %>
+    <br/>
+    <%= form.label :Latitude %>
+    <%= form.text_field :Latitude %>
+    <br/>
+    <%= form.label :Longitude %>
+    <%= form.text_field :Longitude %>
+    <br/>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :Tarif %>
+    <%= form.number_field :Tarif , :step => 0.5%>
+  </div>
+
+<!--  <div class="field">-->
+    <%#= form.label :picture %>
+    <%#= form.file_field  :picture %>
+<!--  </div>-->
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<!--  <div class="row">-->
+
+
+
+<!--    <div class="col-lg-4 col-md-4 ">-->
+<!--      <div class="card  ">-->
+        <%# if  File.file?( Rails.root.join("app/assets/images/#{@borne.id}.jpg")) %>
+        <%#= image_tag ("/assets/#{@borne.id}.jpg")  , class: " img1 img-responsive card-img-top "%>
+        <%# else %>
+          <%#= image_tag ("/assets/99.jpg")  , class: " img1 img-responsive card-img-top "%>
+
+        <%# end %>
+<!--        <div class="card-body text-center">-->
+<!--          <h4 class="card-title"><%#= @borne.Designpizz %></h4>-->
+<!--          <p class="card-text"><%#= @borne.Tarifpizz %>   euros </p>-->
+<!--          <p>Numéro image  : <%#= @borne.id %></p>-->
+<!--          <p>Chemin image  :<%#=  "/assets/#{@borne.id}.jpg" %></p>-->
+<!--          <p><%#= Rails.root.join("app/assets/images") %></p>-->
+          <%#= link_to 'bornes list', bornes_path ,:class => "btn btn-primary" %>
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <br>-->
+<!--    </div>-->
+
+<!--    <div class="col-lg-4 col-md-4 ">-->
+<!--      <div class="card  ">-->
+          <%# if @borne.picture.present? %>
+                <%#= image_tag (@borne.picture_url) , class: " img1 img-responsive card-img-top" %>
+          <%# else %>
+            <%#= image_tag ("/assets/99.jpg")  , class: " img1 img-responsive card-img-top "%>
+
+        <%# end %>
+
+<!--        <div class="card-body text-center">-->
+<!--          <h4 class="card-title"><%#= @borne.Designpizz %></h4>-->
+<!--          <p class="card-text"><%#= @borne.Tarifpizz %>   euros </p>-->
+<!--          <p>Nom image  : <%#= @borne.picture_url %></p>-->
+<!--          <p>Chemin image  : <%#= @borne.picture %></p>-->
+
+          <%#= link_to 'bornes list', bornes_path ,:class => "btn btn-primary" %>
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <br>-->
+<!--    </div>-->
+
+
+<!--  </div>-->
+
+<% end %>
