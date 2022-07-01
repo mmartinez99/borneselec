@@ -8,6 +8,16 @@ class MongoidController < ApplicationController
     # GET /mongoid.json
   def index
     @bornelecs = Borneelec.all
+    @bornelecs.each  {  |doc|
+      puts doc['adresse']
+      puts doc['ville']
+      puts doc['codepostal']
+      puts doc['latitude']
+      puts doc['longitude']
+      puts doc['tarif']
+      puts "ID: "+doc['id']
+      puts "_ID "+doc['_id']
+    }
   end
 
     # GET /mongoid/1
