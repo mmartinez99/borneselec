@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Borneselec est une application réalisée avec Ruby on Rails.
 
-Things you may want to cover:
 
-* Ruby version
+ (CRUD)
+Cette application est connectée avec mongo id (bdd)
 
-* System dependencies
 
-* Configuration
+Cette partie permet la gestion des bornes de recharges électriques. 
 
-* Database creation
+L’application permet d'afficher, modifier, supprimer les informations des bornes.
 
-* Database initialization
+![image](https://user-images.githubusercontent.com/57175461/176961856-dd83abfb-cf2c-48db-be38-ad404b2fab7d.png)
 
-* How to run the test suite
+Map 
 
-* Services (job queues, cache servers, search engines, etc.)
+A l’aide de Leaflet nous pouvons afficher les bornes présente dans la base de donnée ainsi que dans une api open data. 
 
-* Deployment instructions
+![image](https://user-images.githubusercontent.com/57175461/176962077-8cdfeb6e-b5ea-4e05-8721-64ea68ae9dc6.png)
 
-* ...
+
+
